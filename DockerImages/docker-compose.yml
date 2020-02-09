@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: djangoserverexample
+    volumes:
+      - .:/code
+    image: djangoserverexample
+    ports:
+      - "8000:8000"
+  redis:
+    container_name: redis
+    image: "redis:3.0.0"
+    ports:
+      - "3679:3679"
